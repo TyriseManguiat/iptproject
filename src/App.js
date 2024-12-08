@@ -1,6 +1,5 @@
-// App.js
-
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for routing
 import './indexstyle.css';
 
 const App = () => {
@@ -8,6 +7,7 @@ const App = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [email, setEmail] = useState(null);
+    const navigate = useNavigate(); // Initialize useNavigate for redirection
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -23,7 +23,7 @@ const App = () => {
             if (response.ok) {
                 const data = await response.json();
                 setEmail(data.email);
-                window.location.href = 'start.php'; // Update the URL to your dashboard
+                navigate('/start'); // Redirect to the start page (your dashboard) after login
             } else {
                 setError('Username or password is incorrect.');
             }
@@ -60,7 +60,8 @@ const App = () => {
                     <input type="submit" value="Login" />
                 </form>
                 {error && <p>{error}</p>}
-                <p>Not registered yet? <a href='registration.php'>Register Here</a></p>
+                {/* Use Link to navigate to the registration page */}
+                <p>Not registered yet? <Link to="/register">Register Here</Link></p>
             </div>
         </div>
     );
