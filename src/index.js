@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import necessary components
-import './index.css';
+import './start.css';
 import App from './App'; // Login page component
 import Registration from './registration'; // Registration component
 import Start from './Start'; // Start component, if needed

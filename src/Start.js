@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Use useNavigate from React Router v6
-import './start.css';
-
+import './start.css'; 
 const Start = () => {
     const navigate = useNavigate(); // Initialize the useNavigate hook
     const [items, setItems] = useState([]); // State for slider items
