@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for routing
+import { Link, useNavigate } from 'react-router-dom'; // Import Link for routing
 import './registration.css';
 
 const Registration = () => {
@@ -15,6 +15,7 @@ const Registration = () => {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const navigate = useNavigate();
 
     // Handle input changes and update the state
     const handleChange = (e) => {
@@ -58,7 +59,7 @@ const Registration = () => {
                     setSuccess('You are registered successfully.');
                     setTimeout(() => {
                         // Redirect to the login page after successful registration
-                        window.location.href = '/';
+                        navigate('/');
                     }, 2000);
                 } else {
                     setError(result.message); // Display error message from the backend
