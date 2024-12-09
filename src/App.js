@@ -12,7 +12,7 @@ const App = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:3001/', { // Update the URL to your backend
+            const response = await fetch('http://localhost:3000/api/login', { // Update the URL to your backend
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
